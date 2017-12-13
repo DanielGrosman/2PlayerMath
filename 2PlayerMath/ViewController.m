@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Player.h"
 #import "GameModel.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface ViewController ()
 
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userQuestion;
 @property (weak, nonatomic) IBOutlet UILabel *answerInput;
 @property (weak, nonatomic) IBOutlet UILabel *correctLabel;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @property (nonatomic) GameModel *gameModel;
 @property (nonatomic, assign) NSUInteger currentIndex;
@@ -60,6 +62,18 @@
     self.answerInput.text = [NSString stringWithFormat:@"%@%@", self.answerInput.text, string];
 }
 
+- (IBAction)backspaceTapped:(UIButton *)sender {
+    if (![self.answerInput.text isEqualToString:@""]) {
+        NSString *string = self.answerInput.text;
+        NSUInteger length = string.length;
+        NSString *temp = [string substringToIndex:length-1];
+        [self.answerInput setText:temp];
+    } else {
+        self.answerInput.text = @"";
+        }
+    }
+
+
 - (IBAction)buttonTapped:(UIButton *)sender {
     NSString *title = [sender titleForState:UIControlStateNormal];
     [self updateString:title];
@@ -77,7 +91,7 @@
 - (void)updateCorrectLabel:(NSString *)message color:(UIColor *)color {
     self.correctLabel.text = message;
     self.correctLabel.textColor = color;
-    [UIView animateWithDuration:1.0 animations:^(void){
+    [UIView animateWithDuration:2.0 animations:^(void){
         self.correctLabel.alpha = 1;
         self.correctLabel.alpha = 0;
     }];
@@ -95,7 +109,7 @@
 - (void)checkEndGame {
     if (self.currentPlayer.numberOfLives < 1) {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Game Over!" message:[NSString stringWithFormat:@"Player %@ Won the Game\nWould you like to play again?", @([self nextIndex])] preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Game Over!" message:[NSString stringWithFormat:@"Player %@ Won the Game\nWould you like to play again?", @([self nextIndex]+1)] preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *restart = [UIAlertAction actionWithTitle:@"Restart Game" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {[self setup];}];
         UIAlertAction *quit = [UIAlertAction actionWithTitle:@"Quit Game" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {exit(0);}];
         [alert addAction:restart];
@@ -111,11 +125,11 @@
     
     if (isCorrect) {
         self.currentPlayer.score++;
-        [self updateCorrectLabel:@"Correct!" color:[UIColor greenColor]];
+        [self updateCorrectLabel:@"Correct!" color:[UIColor flatMintColor]];
         [self updateScoreLabels];
     } else {
         self.currentPlayer.numberOfLives --;
-        [self updateCorrectLabel:@"Incorrect!" color:[UIColor redColor]];
+        [self updateCorrectLabel:@"Incorrect!" color:[UIColor flatWatermelonColor]];
         [self checkEndGame];
         [self updatePlayerLivesLabels];
     }

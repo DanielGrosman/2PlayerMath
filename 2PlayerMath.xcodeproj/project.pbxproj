@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07CE65C61634E40FD042E351 /* libPods-2PlayerMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4CBF26E61F65E74EE6E41A /* libPods-2PlayerMath.a */; };
 		C0EA1D101FB0ECB60069FA6E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA1D0F1FB0ECB60069FA6E /* AppDelegate.m */; };
 		C0EA1D131FB0ECB60069FA6E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA1D121FB0ECB60069FA6E /* ViewController.m */; };
 		C0EA1D161FB0ECB60069FA6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0EA1D141FB0ECB60069FA6E /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D4CBF26E61F65E74EE6E41A /* libPods-2PlayerMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-2PlayerMath.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5505D3213B21C84FB2191FA6 /* Pods-2PlayerMath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2PlayerMath.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2PlayerMath/Pods-2PlayerMath.debug.xcconfig"; sourceTree = "<group>"; };
 		C0EA1D0B1FB0ECB50069FA6E /* 2PlayerMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2PlayerMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EA1D0E1FB0ECB50069FA6E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0EA1D0F1FB0ECB60069FA6E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		C0EA1D251FB0EF9C0069FA6E /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		C0EA1D271FB0F04E0069FA6E /* GameModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
 		C0EA1D281FB0F04E0069FA6E /* GameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		F2A7BA1FFDAC3C04EB661961 /* Pods-2PlayerMath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2PlayerMath.release.xcconfig"; path = "Pods/Target Support Files/Pods-2PlayerMath/Pods-2PlayerMath.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07CE65C61634E40FD042E351 /* libPods-2PlayerMath.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15C6F0559401ED1D011A2691 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D4CBF26E61F65E74EE6E41A /* libPods-2PlayerMath.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C0EA1D021FB0ECB50069FA6E = {
 			isa = PBXGroup;
 			children = (
 				C0EA1D0D1FB0ECB50069FA6E /* 2PlayerMath */,
 				C0EA1D0C1FB0ECB50069FA6E /* Products */,
+				E542189838F5A4E8D9116809 /* Pods */,
+				15C6F0559401ED1D011A2691 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +96,15 @@
 			path = 2PlayerMath;
 			sourceTree = "<group>";
 		};
+		E542189838F5A4E8D9116809 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5505D3213B21C84FB2191FA6 /* Pods-2PlayerMath.debug.xcconfig */,
+				F2A7BA1FFDAC3C04EB661961 /* Pods-2PlayerMath.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0EA1D211FB0ECB60069FA6E /* Build configuration list for PBXNativeTarget "2PlayerMath" */;
 			buildPhases = (
+				7F4BE78B8FC420F6B7DBEABB /* [CP] Check Pods Manifest.lock */,
 				C0EA1D071FB0ECB50069FA6E /* Sources */,
 				C0EA1D081FB0ECB50069FA6E /* Frameworks */,
 				C0EA1D091FB0ECB50069FA6E /* Resources */,
+				90D0A2B8FE17C711B02432B2 /* [CP] Embed Pods Frameworks */,
+				FBEA9FF79D4CBF044C8C2A68 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F4BE78B8FC420F6B7DBEABB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-2PlayerMath-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90D0A2B8FE17C711B02432B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2PlayerMath/Pods-2PlayerMath-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBEA9FF79D4CBF044C8C2A68 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2PlayerMath/Pods-2PlayerMath-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C0EA1D071FB0ECB50069FA6E /* Sources */ = {
@@ -288,6 +366,7 @@
 		};
 		C0EA1D221FB0ECB60069FA6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5505D3213B21C84FB2191FA6 /* Pods-2PlayerMath.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +381,7 @@
 		};
 		C0EA1D231FB0ECB60069FA6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2A7BA1FFDAC3C04EB661961 /* Pods-2PlayerMath.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
