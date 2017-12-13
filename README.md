@@ -4,7 +4,5 @@
 
 <p align="center">
   <img src="https://raw.github.com/DanielGrosman/2PlayerMath/master/Screenshots/GameState.png" width="250"/>
-  <br> 
-  </br>
   <img src="https://raw.github.com/DanielGrosman/2PlayerMath/master/Screenshots/EndGame.png" width="250"/>
 </p>
